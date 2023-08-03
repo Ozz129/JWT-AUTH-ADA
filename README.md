@@ -42,7 +42,6 @@ app.get('/perfil', cerradura, (req, res) => {
 //Esta función validará el token
 function cerradura(req, res, next) {
     const authToken = req.headers.authorization;
-    const jwToken = authToken && authToken.split(' ')[1];
 
     if (!jwToken) {
         res.status(400).send('Token invalido')
